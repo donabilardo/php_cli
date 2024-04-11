@@ -15,7 +15,6 @@ $students = [
 ];
 
 
-
 // у необязательных передаваемых параметров функции, можно задавать значение по умолчанию
 function getAverageAge(array $array = []): float
 {
@@ -29,3 +28,17 @@ function getAverageAge(array $array = []): float
 }
 
 echo "Средний возраст студентов: " . getAverageAge($students) . PHP_EOL;
+
+
+//Из функции нельзя получить доступ ко внешней переменной (если не задавать global)
+//Но можно передать значение по ссылке используя амперсанд &value
+$external_value = 100;
+
+function mult(int $one, int &$two): float
+{
+    return $one * $two;
+}
+
+echo "Изначальное значение переменной: $external_value" . PHP_EOL;
+echo "Результат выполнения функции с переданным значением по ссылке: " . mult(2, $external_value) .PHP_EOL;
+echo "Изначальное значение переменной: $external_value" . PHP_EOL;
