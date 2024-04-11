@@ -15,6 +15,8 @@ $students = [
 ];
 
 
+
+// у необязательных передаваемых параметров функции, можно задавать значение по умолчанию
 function getAverageAge(array $array = []): float
 {
     $ages = null;
