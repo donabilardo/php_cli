@@ -1,0 +1,50 @@
+version: "3.5"
+services:
+  nginx:
+    container_name: nginx
+    hostname: nginx
+    image: gb/nginx
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data:/data
+#      - ./nginx/gb.com.conf/gb.com.conf:/etc/nginx/conf.d/gb.com.conf
+    networks:
+      - app-network
+
+  php:
+    container_name: php # имя контейнера после запуска
+    hostname: php
+    image: gb/php
+    build:
+      context: ./docker/php-fpm
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/data
+    # мы можем создать для контейнеров внутреннюю сеть
+    networks:
+      - app-network
+
+
+
+  cli:
+    container_name: cli
+    hostname: cli
+    image: gb/cli
+    build:
+      context: ./docker/php-cli
+      dockerfile: Dockerfile
+
+    volumes:
+      - ./data:/data
+
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
