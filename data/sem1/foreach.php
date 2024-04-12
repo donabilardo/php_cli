@@ -17,6 +17,8 @@ $students = [
 
 $ages = null;
 
+//передаем в форыч массив, далее ВСЕ элементы массива перебираются
+// $key = индекс массива, $value = значение
 foreach ($students as $key => $value) {
     echo "ID = $key," . " имя студента: $value[name], " . "Возраст: $value[age]" . PHP_EOL;
     $ages += $value['age'];
