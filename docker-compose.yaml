@@ -12,7 +12,7 @@ services:
       - "443:443"
     volumes:
       - ./data:/data
-#      - ./nginx/gb.com.conf/gb.com.conf:/etc/nginx/conf.d/gb.com.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
     networks:
       - app-network
 
@@ -40,6 +40,7 @@ services:
       dockerfile: Dockerfile
 
     volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
       - ./data:/data
 
     networks:
