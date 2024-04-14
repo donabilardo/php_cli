@@ -19,6 +19,7 @@ function main(string $configFilePath): string
 
 function readConfig(string $configAddress): array|false
 {
+    //data/application/config.ini
     return parse_ini_file($configAddress, true);
 }
 
@@ -32,6 +33,7 @@ function parseCommand(): string
             "add" => "addFunction",
             "clear" => "clearFunction",
             "help" => "helpFunction",
+            "profile" => "readProfilesDirectory",
             default => "helpFunction"
         };
     }

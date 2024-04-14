@@ -9,7 +9,6 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN apt-get update && apt-get install zip unzip
 
 WORKDIR /data
-
 VOLUME /data
 
 #ENTRYPOINT ["top", "-b"]

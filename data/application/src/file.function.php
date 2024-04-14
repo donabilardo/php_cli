@@ -5,12 +5,13 @@ function readFunction(string $address): string
 
 //    $path = __DIR__ . "/user.txt";
 //  пытаемся открыть файл
+    echo $address;
     $file = fopen($address, "rb");
 
     if (file_exists($address) && is_readable($address)) {
         $content = ''; //в эту переменную получаем данные из читаемого файла
         while (!feof($file)) { //    читаем файл пока не закончится
-            $content .= fread($file, 100); //    читаем по 100 байт
+            $content .= fgets($file); //    читаем по 100 байт
         }
         fclose($file); // закрываем файл
         return $content;
