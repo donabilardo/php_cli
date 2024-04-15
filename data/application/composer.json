@@ -1,0 +1,19 @@
+{
+    "name": "example/application",
+    "description": "PHP CLI",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/file.function.php",
+            "src/lib/translite.php",
+            "src/main.function.php",
+            "src/profiles.php",
+            "src/template.function.php"
+        ]
+
+    },
+    "require": {
+        "php": "^8.2"
+    }
+}
