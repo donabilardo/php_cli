@@ -11,7 +11,8 @@ function readFunction(string $address): string
     if (file_exists($address) && is_readable($address)) {
         $content = ''; //в эту переменную получаем данные из читаемого файла
         while (!feof($file)) { //    читаем файл пока не закончится
-            $content .= fgets($file); //    читаем по 100 байт
+            //$content .= fgets($file); //    читаем по 100 байт
+            echo fgets($file); //выводим сразу строку без накопления в переменную $content
         }
         fclose($file); // закрываем файл
         return $content;
