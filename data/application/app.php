@@ -14,3 +14,5 @@ echo $result;
 
 
 //docker compose run --rm -it cli php application/app.php
+
+//composer dump-autoload
