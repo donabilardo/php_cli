@@ -27,13 +27,7 @@ function isDateValid($input) {
     return false;
 }
 
-// Пример использования функции
-$dateInput = readline("Дата в формате ДД:ММ:ГГ" . PHP_EOL);
-if (isDateValid($dateInput)) {
-    echo "Дата введена корректно.";
-} else {
-    echo "Дата введена некорректно.";
-}
+
 
 
 

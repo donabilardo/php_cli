@@ -6,11 +6,11 @@ function main(string $configFilePath): string
         return handleError("Невозможно прочитать конфиг приложения");
     }
 
-    $storageFileAddress = $config['storage']['address'];
+//    $storageFileAddress = $config['storage']['address'];
     $functionName = parseCommand();
 
     if (function_exists($functionName)) {
-        $result = $functionName($storageFileAddress);
+        $result = $functionName($config);
     } else {
         $result = hadleError("Функции не существует");
     }
@@ -33,7 +33,7 @@ function parseCommand(): string
             "add" => "addFunction",
             "clear" => "clearFunction",
             "help" => "helpFunction",
-            "profile" => "readProfilesDirectory",
+            "read_profile" => "readAllProfile",
             default => "helpFunction"
         };
     }
