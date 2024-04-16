@@ -34,6 +34,7 @@ function parseCommand(): string
             "clear" => "clearFunction",
             "help" => "helpFunction",
             "read_profile" => "readAllProfile",
+            "search_profile" => "searchProfile",
             default => "helpFunction"
         };
     }
