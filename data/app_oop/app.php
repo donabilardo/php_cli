@@ -1,17 +1,11 @@
 <?php
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
-function parseConfig(string $path): array|false
-{
-    echo __DIR__ . PHP_EOL;
+use App\Main;
 
-    if (file_exists($path) && is_readable($path)) {
-        return parse_ini_file($path);
-    } else {
-        return "Ошибка";
-    }
-
-}
+$result = new Main();
+$result->run(__DIR__ . '/config.ini');
 
 
-$a = parseConfig(__DIR__ . '/config.ini');
-var_dump($a);
+
+

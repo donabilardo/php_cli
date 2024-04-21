@@ -1,0 +1,12 @@
+{
+  "name": "app_oop/webdev",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "File\\": "src/File",
+      "Dialog\\": "src/Dialog",
+      "System\\": "src/System"
+    }
+  },
+  "require": {}
+}

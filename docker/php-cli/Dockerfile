@@ -6,7 +6,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN apt-get update && apt-get install zip unzip
+RUN apt-get update && apt-get install zip unzip mc -y
+
 
 WORKDIR /data
 VOLUME /data
