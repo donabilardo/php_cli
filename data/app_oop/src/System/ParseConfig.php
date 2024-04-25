@@ -5,17 +5,21 @@ namespace System;
 class ParseConfig
 {
 
-    public function parseConfig(string $path): array|string
+    public function parseConfig(string $configAddress): array|string
     {
-        if (file_exists($path) && is_readable($path)) {       //если файл конфига существует и доступен для записи
-            return parse_ini_file($path, true);  //возвращаем массив
+        if (!file_exists($configAddress) && !is_readable($configAddress)) {       //если файл конфига существует и доступен для записи
+            return false;
         } else {
-            return "Ошибка чтения конфига";                                     //иначе возвращаем ложь
+            $a = gettype(parse_ini_file($configAddress, true));
+            return parse_ini_file($configAddress, true);  //возвращаем массив
         }
+        //иначе возвращаем ложь
 
     }
 
 }
+
+
 
 
 

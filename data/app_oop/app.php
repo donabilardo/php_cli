@@ -4,7 +4,8 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'a
 use App\Main;
 
 $result = new Main();
-$result->run(__DIR__ . '/config.ini');
+$result->run(__DIR__ . '/config.ini1');
+//echo $result;
 
 
 

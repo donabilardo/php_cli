@@ -3,8 +3,8 @@
 namespace File;
 class Test
 {
- public function __construct()
- {
- echo 111;
- }
+    public function test()
+    {
+        return  "TEST";
+    }
 }
